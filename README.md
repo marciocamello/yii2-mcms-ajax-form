@@ -28,4 +28,24 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \mcms\ajaxform\AutoloadExample::widget(); ?>```
+
+<?php
+  $form = \mcms\ajaxform\AjaxActiveForm::begin([
+					'id' => 'register-form',
+					'options'=>[
+						'enctype'=>'multipart/form-data'
+					],
+					'modal' => true,
+					'modalOptions' => [
+						'header' => false,
+					],
+					'pluginOptions' => [
+						'resetForm' => false,
+					],
+				]);
+?>
+
+Your form objects here.
+				
+<?php \mcms\ajaxform\AjaxActiveForm::end();?>
+```
